@@ -1,19 +1,18 @@
-import {Injectable} from '@angular/core';
-import {UIRouter, Ng2StateDeclaration} from 'ui-router-ng2';
-
+import {Component} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {AppComponent} from './containers/App';
 
-export const STATES: Ng2StateDeclaration[] = [
+@Component({
+  selector: 'fountain-root',
+  template: '<router-outlet></router-outlet>'
+})
+export class RootComponent {}
+
+export const routes: Routes = [
   {
-    name: 'App',
-    url: '/',
+    path: '',
     component: AppComponent
   }
 ];
 
-@Injectable()
-export class MyUIRouterConfig {
-  configure(uiRouter: UIRouter) {
-    uiRouter.urlRouterProvider.otherwise('App');
-  }
-}
+export const routing = RouterModule.forRoot(routes);

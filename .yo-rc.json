@@ -11,7 +11,7 @@
       "namespace": "fountain-angular2:app",
       "_": [],
       "sample": "todoMVC",
-      "router": "uirouter"
+      "router": "router"
     }
   }
 }

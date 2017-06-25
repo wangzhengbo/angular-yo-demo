@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
-import {UIView, UIRouterModule} from 'ui-router-ng2';
-import {STATES, MyUIRouterConfig} from './routes';
+import {routing, RootComponent} from './routes';
 import {store} from './reducers';
 
 import {AppComponent} from './containers/App';
@@ -16,10 +15,11 @@ import {TodoTextInputComponent} from './components/TodoTextInput';
   imports: [
     BrowserModule,
     FormsModule,
-    UIRouterModule.forRoot({states: STATES, configClass: MyUIRouterConfig}),
+    routing,
     store
   ],
   declarations: [
+    RootComponent,
     AppComponent,
     FooterComponent,
     HeaderComponent,
@@ -27,6 +27,6 @@ import {TodoTextInputComponent} from './components/TodoTextInput';
     TodoItemComponent,
     TodoTextInputComponent
   ],
-  bootstrap: [UIView]
+  bootstrap: [RootComponent]
 })
 export class AppModule {}
